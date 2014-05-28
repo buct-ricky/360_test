@@ -1,0 +1,25 @@
+基础题
+2.ifconfig_reg:
+  解ifconfig命令的标准输出，返回一个hash。key是网卡名称，value是对应的ip。
+
+  SHELL脚本名为：ifconfig_reg.sh
+  
+4、log_cutting：
+日志切割，有这样一个access.log每天都会打出大量日志。实现一个日志切割的功能，并说明该实现方式有什么缺陷。
+
+  执行crontab -e命令，添加0 */6 * * * /bin/bash /home/michael/log_cutting.sh
+  SHELL脚本名为：log_cutting.sh
+  该切割方式的缺陷：该方式每隔6个小时切割一次日志，把日志放进另一个目录中，随着时间的推移，该目录 下的件越来越多，难以管理，而且每个目录下的inode数是有限的，需要定期对这个目录进行管理。
+
+  应用题
+6、sysinfo_recorder：
+写一个本地服务，定时的搜索系统的cpu使用情况并记录下来。
+需要考虑到cpu的使用情况包括哪项信息，用什么方式存储数据（记录件的大小不能一直增长，记录的数据易于展示）
+
+   执行crontab -e命令，添加 0 */4 * * * /bin/bash /home/michael/sysinfo_recorder.sh
+   SHELL脚本名为：sysinfo_recorder.sh
+ 
+
+注：由于我之前没有学过perl脚本，所以这次的题目都是用SHELL编写的。之前只是对这方面挺感兴趣，研究该方面的书，但由于缺少环境，所以对于这类的题目显得有点陌生。可能我做的题目不够多，或许不够好，但是我正在这方面努力，希望以后能从事运维相关的工作，所以我很希望能进入贵公司该运维岗位来实习。对于perl，我觉得我的学习能力还不错，相信自己能快速地熟悉该脚本语言。
+
+
